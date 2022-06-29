@@ -17,5 +17,7 @@ EXPOSE 15000
 WORKDIR /app/
 COPY . /app/
 
+RUN cd ./app; npm run prep-mui
+
 # Run `yarn dev` and set the host to 0.0.0.0 so we can access the web app from outside
-CMD ["npm", "dev", "--host", "0.0.0.0"]
+#CMD ["npm", "dev", "--host", "0.0.0.0"]
