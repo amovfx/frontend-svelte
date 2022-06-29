@@ -1,7 +1,18 @@
 <script>
     import Topbar from "../components/topbar.svelte";
 </script>
-
-<Topbar title="Login">
+<div>
+<Topbar title="Login"/>
 <slot/>
-</Topbar>
+</div>
+
+<style>
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+</style>
+
+
