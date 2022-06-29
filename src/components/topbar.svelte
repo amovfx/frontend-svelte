@@ -7,9 +7,11 @@
       AutoAdjust,
     } from '@smui/top-app-bar';
     import IconButton from '@smui/icon-button';
-    let topAppBar: TopAppBarComponentDev;
+    
     import Button from '@smui/button';
-
+    
+    
+    let topAppBar: TopAppBarComponentDev;
     export let title = "Title"
   </script>
 
