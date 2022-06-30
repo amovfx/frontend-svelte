@@ -33,7 +33,7 @@
     <Textfield variant="outlined" bind:value={password} label="Password">
         <HelperText slot="helper">Helper Text</HelperText>
     </Textfield>
-    <Button on:click={handleSubmit}>Sign In</Button>
+    <Button on:click={handleSubmit}>Log In</Button>
 </div>
 
 <style>

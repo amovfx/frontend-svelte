@@ -37,7 +37,7 @@
 
     $: isValid = !((password === password_confirm) && (password.length > 0))
     $: progress = Math.min((entropy(password) / 3.5),1.0)
-    $: password_strength = Array("Bad", "Weak", "Good", "Strong")[Math.floor(progress*3.5)]
+    $: password_strength = Array("Hacked instantly", "Sad", "Ass", "Strong")[Math.floor(progress*3.5)]
 
     
 
