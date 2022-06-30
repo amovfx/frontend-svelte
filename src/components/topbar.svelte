@@ -1,14 +1,4 @@
-<style>
-  /* Hide everything above this component. */
-  :global(app),
-  :global(body),
-  :global(html) {
-    display: block !important;
-    height: auto !important;
-    width: auto !important;
-    position: static !important;
-  }
-</style>
+
 
 <script lang="ts">
     import type { TopAppBarComponentDev } from '@smui/top-app-bar';
@@ -21,10 +11,13 @@
     import IconButton from '@smui/icon-button';
     
     import Button from '@smui/button';
+
+    import {goto} from '$app/navigation'
     
     
     let topAppBar: TopAppBarComponentDev;
     export let title = "Title"
+
   </script>
 
 <TopAppBar bind:this={topAppBar} variant="fixed">
@@ -35,12 +28,28 @@
       </Section>
       
       <Section align="end" toolbar>
-        <Button>Login</Button>
-        <Button>Register</Button>
+        <Button on:click={()=> {goto('/login')}}>Login</Button>
+        <Button on:click={()=> {goto('/register')}}>Register</Button>
 
       </Section>
     </Row>
   </TopAppBar>
+  <AutoAdjust {topAppBar}>
+    <slot/>
+  </AutoAdjust>
+
+<style>
+  /* Hide everything above this component. */
+  :global(app),
+  :global(body),
+  :global(html) {
+    display: block !important;
+    height: auto !important;
+    width: auto !important;
+    position: static !important;
+  }
+</style>
+
 
   
 
