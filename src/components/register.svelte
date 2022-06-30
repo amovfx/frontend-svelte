@@ -7,7 +7,7 @@
     import {goto} from '$app/navigation'
     import axios from 'axios';
 
-    let email = '', password = '', password_confirm = '';
+    let email = '', password : str = '', password_confirm = '';
 
     function entropy(str) {
         const len = str.length
@@ -23,7 +23,7 @@
 
     async function handleSubmit() {
         try {
-            await axios.post('/api/v1/login', {
+            await axios.post('/api/v1/register', {
                 email,
                 password
             });
@@ -36,8 +36,8 @@
     }
 
     $: isValid = !((password === password_confirm) && (password.length > 0))
-    $: ent  = entropy(password);
-    $: progress = Math.min((ent / 3.5),1.0)
+    $: progress = Math.min((entropy(password) / 3.5),1.0)
+    $: password_strength = Array("Bad", "Weak", "Good", "Strong")[Math.floor(progress*3.5)]
 
     
 
@@ -54,7 +54,7 @@
         <HelperText slot="helper">Helper Text</HelperText>
     </Textfield>
     <Textfield variant="outlined" bind:value={password} label="Password">
-        <HelperText slot="helper">{`Entropy: ${ent}`}</HelperText>
+        <HelperText slot="helper">{`Strength: ${password_strength}`}</HelperText>
     </Textfield>
     <div>
     <LinearProgress {progress} />
