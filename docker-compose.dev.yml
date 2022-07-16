@@ -15,4 +15,7 @@ services:
     volumes:
       - ./src/:/app/src/
       - ./static/:/app/static/
+    networks:
+      - login-server
+      - frontend
     command: npm run dev-with-args-flag
