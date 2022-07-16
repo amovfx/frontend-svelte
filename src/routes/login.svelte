@@ -10,10 +10,12 @@
 
     async function handleSubmit() {
         try {
-            await axios.post('/api/v1/login', {
+            const {data} = await axios.post('/api/v1/login', {
                 email,
                 password
-            });
+            }, {withCredentials: true});
+
+            axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
 
             goto('/');
         } catch (e) {

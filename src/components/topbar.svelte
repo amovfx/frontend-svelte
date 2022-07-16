@@ -13,10 +13,23 @@
     import Button from '@smui/button';
 
     import {goto} from '$app/navigation'
+    import { onMount } from 'svelte';
+    import axios from 'axios';
     
     
     let topAppBar: TopAppBarComponentDev;
     export let title = "Title"
+
+    let auth = false;
+
+    onMount(async () => {
+      try {
+        await axios.get('user');
+        auth = true;
+      } catch(e) {
+        auth = false;
+      }
+    })
 
   </script>
 
@@ -28,8 +41,12 @@
       </Section>
       
       <Section align="end" toolbar>
-        <Button on:click={()=> {goto('/login')}}>Login</Button>
+        {#if !auth}
+        <Button on:click={()=> {goto('/login')}}>Login</Button>       
         <Button on:click={()=> {goto('/register')}}>Register</Button>
+        {:else}
+        <Button on:click={()=> {goto('/logout')}}>Logout</Button>
+        {/if}
 
       </Section>
     </Row>

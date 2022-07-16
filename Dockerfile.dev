@@ -13,4 +13,4 @@ RUN cd install; npm install
 WORKDIR /app/
 COPY . /app/
 
-RUN cd ./app
+RUN cd /app
