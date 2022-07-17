@@ -4,6 +4,7 @@
     import axios from 'axios';
 
 
+
     export let base_url : 'http://localhost:3000';
 
     onMount( async () => {
@@ -29,23 +30,29 @@
         return err;
         });
     })
-
 </script>
+<div class='stack'>
+    <Topbar title='Login'/>
+    <slot/> 
+</div>
 
-<Topbar title="Login"/>
-<slot/>
+
+
+
+
 
 
 
 
 
 <style>
-    div {
+    .stack{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        position:relative
+        position:relative;
+
 }
 </style>
 

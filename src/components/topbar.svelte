@@ -15,6 +15,9 @@
     import {goto} from '$app/navigation'
     import { onMount } from 'svelte';
     import axios from 'axios';
+
+
+
     
     
     let topAppBar: TopAppBarComponentDev;
@@ -32,8 +35,8 @@
     })
 
   </script>
+<div class="top-app-bar-container">
 
-<TopAppBar bind:this={topAppBar} variant="fixed">
     <Row>
       <Section>
         <IconButton class="material-icons">menu</IconButton>
@@ -50,10 +53,11 @@
 
       </Section>
     </Row>
-  </TopAppBar>
-  <AutoAdjust {topAppBar}>
-    <slot/>
-  </AutoAdjust>
+    </div>
+
+
+
+
 
 <style>
   /* Hide everything above this component. */
@@ -63,7 +67,14 @@
     display: block !important;
     height: auto !important;
     width: auto !important;
-    position: static !important;
+
+  }
+  .top-app-bar-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: orange;
   }
 </style>
 

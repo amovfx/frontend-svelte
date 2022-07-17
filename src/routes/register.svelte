@@ -1,9 +1,11 @@
 <script lang="ts">
     import Register from "../components/register.svelte";
 </script>
+<section>
 <div>
     <Register/>
 </div>
+</section>
 
 
 
@@ -16,6 +18,7 @@
         justify-content: center;
         position:relative;
         width: auto;
+        top: 20px;
     }
 
 </style>

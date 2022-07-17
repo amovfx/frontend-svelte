@@ -7,9 +7,9 @@
     import {goto} from '$app/navigation'
     import axios from 'axios';
 
-    let email = '', password : str = '', password_confirm = '';
+    let email = '', password : string = '', password_confirm = '';
 
-    function entropy(str) {
+    function entropy(str: string) {
         const len = str.length
         
         // Build a frequency map from the string.

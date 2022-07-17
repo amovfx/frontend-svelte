@@ -27,7 +27,7 @@
 
 
 
-<div>
+<div class='stack'>
     <h5>Login</h5>
     <Textfield variant="outlined" bind:value={email} label="Email">
         <HelperText slot="helper">Helper Text</HelperText>
@@ -38,13 +38,17 @@
     <Button on:click={handleSubmit}>Log In</Button>
 </div>
 
+
 <style>
-    div {
+    .stack {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        position:relative;
+        width: auto;
+        heihgt: auto;
+
+
     }
 </style>
 
