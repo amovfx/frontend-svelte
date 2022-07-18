@@ -4,7 +4,8 @@
     import axios from 'axios';
 
 
-
+    console.log("Running layout...")
+    console.log(import.meta.env.VITE_MESSAGE)
 
 
     onMount( async () => {

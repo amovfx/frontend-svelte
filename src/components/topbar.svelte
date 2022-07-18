@@ -35,7 +35,7 @@
     <Row>
       <Section>
         <IconButton class="material-icons">menu</IconButton>
-        <Title>{title}</Title>
+        <Title on:click={() => {goto('/')}}>{title}</Title>
       </Section>
       
       <Section align="end" toolbar>

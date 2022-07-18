@@ -10,7 +10,7 @@
 
     async function handleSubmit() {
         try {
-            const {data} = await axios.post('/api/v1/login', {
+            const {data} = await axios.post('/api/v1/login/', {
                 email,
                 password
             }, {withCredentials: true});
