@@ -26,12 +26,7 @@
     let auth = false;
 
     onMount(async () => {
-      try {
-        await axios.get('user');
-        auth = true;
-      } catch(e) {
-        auth = false;
-      }
+
     })
 
   </script>

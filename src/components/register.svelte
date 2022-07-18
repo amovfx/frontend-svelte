@@ -23,11 +23,11 @@
 
     async function handleSubmit() {
         try {
-            await axios.post('/api/v1/register', {
+            const {data} = await axios.post('http://auth-server/api/v01/login/register', {
                 email,
                 password
             });
-
+            console.log(data)
             goto('/');
         } catch (e) {
             console.error(e);
